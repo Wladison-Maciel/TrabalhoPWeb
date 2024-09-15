@@ -3,7 +3,7 @@ footer {
     background-color: #0F132E;
     color: #fff;
     padding: 10px 0; /* Espaçamento interno (topo e baixo) */
-    position: fixed;
+    position: relative;
     bottom: 0; /* Posiciona o rodapé na parte inferior */
     width: 100%; /* Ocupa toda a largura da tela */
 }
