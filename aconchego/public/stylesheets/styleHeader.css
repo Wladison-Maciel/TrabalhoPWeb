@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #D9D9D9;
+    color: #000000;
+    padding: 20px;
+    margin-left:30px;
+    margin-right:20px;
+}
+
+.header-left {
+    /* Estilos para a parte esquerda do cabeçalho */
+}
+
+.header-right {
+    /* Estilos para a parte direita do cabeçalho */
+}
+
+nav {
+    text-align: right;
+}
+
+nav a {
+    color: #000000;
+    font-family:'Poppins';
+    text-decoration: none;
+    padding: 8px 16px;
+    margin-right:80px;
+    font-size:18px;
+    font-weight: 500;
+
+}
+
+

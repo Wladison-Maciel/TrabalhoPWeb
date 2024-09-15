@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aconchego.com</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="/stylesheets/styleIndex.css"> 
+
+    <!-- Slick Carousel CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+</head>
+<body>
+    <header>
+        <%- include('./partials/header') %>
+    </header>
+    
+    <h1>Os hotéis mais populares para você</h1>
+
+    <!-- Exibir os melhores hotéis com slider -->
+    <div class="slider-container">
+        <div class="slick-slider">
+            <% topHotels.forEach(function(hotel) { %>
+                <div class="card">
+                    <img src="<%= hotel.image || '/images/hotel-placeholder.png' %>" alt="Imagem do hotel">
+                    <div class="card-content">
+                        <div class="card-title"><%= hotel.title %></div>
+                        <div class="card-text">Nota: <%= hotel.rating || 'Não disponível' %></div>
+                        <div class="card-text"><%= hotel.location %></div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+
+    <!-- Título centralizado para os outros hotéis -->
+    <h2 class="other-hotels-title">Outros hotéis</h2>
+
+    <!-- Exibir os outros hotéis restantes -->
+    <div class="card-container">
+        <% otherHotels.forEach(function(hotel) { %>
+            <div class="card">
+                <img src="<%= hotel.image || '/images/hotel-placeholder.png' %>" alt="Imagem do hotel">
+                <div class="card-content">
+                    <div class="card-title"><%= hotel.title %></div>
+                    <div class="card-text">Nota: <%= hotel.rating || 'Não disponível' %></div>
+                    <div class="card-text"><%= hotel.location %></div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+    
+    <footer>
+        <%- include('./partials/footer') %>
+    </footer>
+
+    <!-- jQuery (necessário para o Slick) -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick Carousel JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.slick-slider').slick({
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                arrows: true,
+                dots: true,
+                autoplay: false,
+                autoplaySpeed: 2000,
+            });
+        });
+    </script>
+</body>
+</html>
