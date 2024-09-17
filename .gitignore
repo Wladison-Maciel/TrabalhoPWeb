@@ -2,7 +2,6 @@
 node_modules/
 
 # Configurações específicas do ambiente
-config.js
 
 # Logs
 *.log
