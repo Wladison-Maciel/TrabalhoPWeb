@@ -1,6 +1,6 @@
 # Node modules
 node_modules/
-error.jade
+aconchego/views/error.jade
 # Configurações específicas do ambiente
 
 # Logs
